@@ -35,7 +35,7 @@ A robust backend system built with NestJS, GraphQL, and TypeORM for managing dep
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/Brobot64/tactology_nest_test
 ```
 
 
