@@ -74,7 +74,8 @@ A robust backend system built with NestJS, GraphQL, and TypeORM for managing dep
 
 ## Project Structure
 
-c:\Users\Brobot\Documents\Onprojects\Testnewev\newnestreman\
+```
+\
 ├── src/
 │   ├── auth/                  # Authentication module
 │   │   ├── dto/               # Data transfer objects
@@ -103,6 +104,7 @@ c:\Users\Brobot\Documents\Onprojects\Testnewev\newnestreman\
 ├── package.json               # NPM dependencies
 ├── tsconfig.json              # TypeScript configuration
 └── README.md                  # This file
+```
 
 ## Installation
 
