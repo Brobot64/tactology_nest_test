@@ -38,6 +38,12 @@ A robust backend system built with NestJS, GraphQL, and TypeORM for managing dep
 git clone https://github.com/Brobot64/tactology_nest_test
 ```
 
+## Technologies Used
+- PostgreSQL (or your chosen database)
+
+Create a .env file in the root directory with the following variables:
+DATABASE_URL=your_database_url
+
 
 # NestJS Department Management System
 

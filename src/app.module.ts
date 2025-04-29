@@ -26,11 +26,12 @@ import { DepartmentsModule } from './departments/departments.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: parseInt(process.env.DB_PORT || '5432', 10),
-      username: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASSWORD || 'postgres',
-      database: process.env.DB_NAME || 'department_db',
+      url: 'postgresql://brobot:ValENotJr0n0ZwtGoXU7n9L7C8Nv5KHf@dpg-d08l7pjuibrs73b4npug-a.oregon-postgres.render.com/marks',
+      // host: process.env.DB_HOST || 'localhost',
+      // port: parseInt(process.env.DB_PORT || '5432', 10),
+      // username: process.env.DB_USER || 'postgres',
+      // password: process.env.DB_PASSWORD || 'postgres',
+      // database: process.env.DB_NAME || 'department_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true, // Disable in production
     }),
