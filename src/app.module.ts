@@ -16,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { DepartmentsModule } from './departments/departments.module';
+import { AppResolver } from './app.resolver';
 
 @Module({
   imports: [
@@ -33,11 +34,18 @@ import { DepartmentsModule } from './departments/departments.module';
       // password: process.env.DB_PASSWORD || 'postgres',
       // database: process.env.DB_NAME || 'department_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // Disable in production
+      synchronize: true,
+      ssl: true,
+      extra: {
+        ssl: {
+          rejectUnauthorized: false
+        }
+      }
     }),
     AuthModule,
     UsersModule,
     DepartmentsModule,
   ],
+  providers: [AppResolver],
 })
 export class AppModule {}

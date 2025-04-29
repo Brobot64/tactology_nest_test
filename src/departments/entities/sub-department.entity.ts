@@ -1,14 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Department } from './department.entity';
 
-@Entity()
+@ObjectType()
 export class SubDepartment {
-  @PrimaryGeneratedColumn()
+  @Field(() => ID)
   id: number;
 
-  @Column({ length: 100 })
+  @Field()
   name: string;
 
-  @ManyToOne(() => Department, (department) => department.subDepartments)
+  @Field(() => Department)
   department: Department;
 }

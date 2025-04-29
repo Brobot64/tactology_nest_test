@@ -1,16 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { SubDepartment } from './sub-department.entity';
 
-@Entity()
+@ObjectType()
 export class Department {
-  @PrimaryGeneratedColumn()
+  @Field(() => ID)
   id: number;
 
-  @Column({ length: 100 })
+  @Field()
   name: string;
 
-  @OneToMany(() => SubDepartment, (subDepartment) => subDepartment.department, {
-    cascade: true,
-  })
+  @Field(() => [SubDepartment])
   subDepartments: SubDepartment[];
 }

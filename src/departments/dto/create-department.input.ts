@@ -1,6 +1,5 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { IsNotEmpty, MinLength, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsNotEmpty, MinLength, ValidateNested, IsArray } from 'class-validator';
 
 @InputType()
 class CreateSubDepartmentInput {
@@ -19,6 +18,6 @@ export class CreateDepartmentInput {
 
   @Field(() => [CreateSubDepartmentInput], { nullable: true })
   @ValidateNested({ each: true })
-  @Type(() => CreateSubDepartmentInput)
+  @IsArray()
   subDepartments?: CreateSubDepartmentInput[];
 }

@@ -1,25 +1,16 @@
-import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-import { UseGuards } from '@nestjs/common';
-import { Department } from './entities/department.entity';
+import { Resolver, Mutation, Args } from '@nestjs/graphql';
 import { DepartmentsService } from './departments.service';
+import { Department } from './entities/department.entity';
 import { CreateDepartmentInput } from './dto/create-department.input';
-import { GqlAuthGuard } from '../auth/guards/gql-auth.guard';
 
 @Resolver(() => Department)
 export class DepartmentsResolver {
-  constructor(private departmentsService: DepartmentsService) {}
-
-  @Query(() => [Department], { name: 'departments' })
-  @UseGuards(GqlAuthGuard)
-  async getDepartments() {
-    return this.departmentsService.findAll();
-  }
+  constructor(private readonly departmentsService: DepartmentsService) {}
 
   @Mutation(() => Department)
-  @UseGuards(GqlAuthGuard)
   async createDepartment(
-    @Args('input') createDepartmentInput: CreateDepartmentInput,
-  ) {
+    @Args('input') createDepartmentInput: CreateDepartmentInput
+  ): Promise<Department> {
     return this.departmentsService.create(createDepartmentInput);
   }
 }
