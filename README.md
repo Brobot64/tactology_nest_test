@@ -109,7 +109,7 @@ A robust backend system built with NestJS, GraphQL, and TypeORM for managing dep
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/Brobot64/tactology_nest_test
 
 2. Install dependencies:
 yarn install
